@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: transform 0.3s, box-shadow 0.3s;
+  color: var(--text-color);
+
+  &:hover {
+    box-shadow: 0 6px 12px var(--shadow-color);
+    transform: translateY(-5px) scale(1.02);
+  }
+}
+
+.user-img-b {
+  margin: 12px 0;
+  position: relative;
+}
+
+.user-avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}

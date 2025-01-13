@@ -1,0 +1,14 @@
+<article>
+  <h2>{{ name }}</h2>
+  <div class="user-img-b">
+    <img
+      (click)="clickAvatar()"
+      [alt]="name"
+      [ngSrc]="imgSrc"
+      class="user-avatar"
+      height="150"
+      width="150"
+    />
+  </div>
+  <p>{{ location }}</p>
+</article>

@@ -1,0 +1,38 @@
+<h1 #scrollToTop>User list</h1>
+@if (users$ | async; as users) {
+  <section [@listAnimation]="currentPage">
+    @for (user of users; track user.id.value) {
+
+      <app-user-card [name]="user.name.first + ' ' + user.name.last"
+                     [location]="user.location.country + ', ' + user.location.state + ', ' + user.location.city + ', ' + user.location.street.name"
+                     [imgSrc]="user.picture.large"
+                     (avatarClicked)="copyToClipboard(user.email)"
+      ></app-user-card>
+
+    } @empty {
+      <div>There are no items ;(</div>
+    }
+  </section>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+
+    <div class="pagination-tiles">
+      @for (page of totalPagesArray; track $index) {
+        <div
+          class="page-tile"
+          [class.active]="page === currentPage"
+          (click)="navigateToPage(page)"
+        >
+          {{ page }}
+        </div>
+      }
+    </div>
+
+    <div class="pagination-current-page">
+      Page {{ currentPage }}
+    </div>
+
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+}

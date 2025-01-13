@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #007bff;
+  --primary-color-dark: #0056b3;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --background-color-secondary: #f0f0f0;
+  --background-color-third: #d0d0d0;
+  --card-bg-color: #ffffff;
+  --hover-color: #ffffff;
+  --border-color: #e0e0e0;
+  --font-family: 'Inter', 'Roboto', sans-serif;
+  --text-color: #333333;
+  --transition-duration: 0.3s;
+  --spacing-unit: 8px;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.5;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
+  font-size: 1rem;
+  border-radius: calc(var(--spacing-unit) * 0.5);
+  cursor: pointer;
+  transition: background-color var(--transition-duration), transform var(--transition-duration);
+
+  &:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-duration);
+}
+
+a:hover {
+  color: var(--primary-color-dark)
+}
